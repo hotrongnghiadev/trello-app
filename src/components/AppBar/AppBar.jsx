@@ -3,7 +3,7 @@ import SearchIcon from '@mui/icons-material/Search'
 import AddIcon from '@mui/icons-material/Add'
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline'
 import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone'
-import ModeSelect from '~/components/ModeSelect'
+import ModeSelect from '~/components/ModeSelect/ModeSelect'
 import Box from '@mui/material/Box'
 import AppsIcon from '@mui/icons-material/Apps'
 import TrelloIcon from '~/assets/trello.svg?react'
@@ -55,7 +55,11 @@ const AppBar = () => {
             <Recent />
             <Starred />
             <Templates />
-            <Button variant='outlined' startIcon={<AddIcon />} sx={{ color: 'white' }}>
+            <Button
+              variant='outlined'
+              startIcon={<AddIcon />}
+              sx={{ color: 'white' }}
+            >
               Create
             </Button>
           </Box>
@@ -100,7 +104,11 @@ const AppBar = () => {
         <ModeSelect />
 
         <Tooltip title='Notifications'>
-          <Badge color='warning' variant='dot' sx={{ cursor: 'pointer' }}>
+          <Badge
+            color='warning'
+            variant='dot'
+            sx={{ cursor: 'pointer' }}
+          >
             <NotificationsNoneIcon sx={{ color: 'white ' }} />
           </Badge>
         </Tooltip>

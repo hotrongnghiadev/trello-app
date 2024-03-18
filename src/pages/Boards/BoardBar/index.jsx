@@ -4,7 +4,7 @@ import FilterListIcon from '@mui/icons-material/FilterList'
 import AddToDriveIcon from '@mui/icons-material/AddToDrive'
 import VpnLockIcon from '@mui/icons-material/VpnLock'
 import DashboardIcon from '@mui/icons-material/Dashboard'
-import { Avatar, AvatarGroup, Button, Chip, Tooltip } from '@mui/material'
+import { Avatar, AvatarGroup, Button, Chip, Tooltip, capitalize } from '@mui/material'
 import Box from '@mui/material/Box'
 
 const MENU_STYLES = {
@@ -21,7 +21,7 @@ const MENU_STYLES = {
   }
 }
 
-const BoardBar = () => {
+const BoardBar = ({ board }) => {
   return (
     <Box
       sx={{
@@ -38,11 +38,36 @@ const BoardBar = () => {
       }}
     >
       <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
-        <Chip sx={MENU_STYLES} icon={<DashboardIcon />} label='Dashboard' clickable />
-        <Chip sx={MENU_STYLES} icon={<VpnLockIcon />} label='Public/Private Workspaces' clickable />
-        <Chip sx={MENU_STYLES} icon={<AddToDriveIcon />} label='Add To Google Drive' clickable />
-        <Chip sx={MENU_STYLES} icon={<BoltIcon />} label='Automation' clickable />
-        <Chip sx={MENU_STYLES} icon={<FilterListIcon />} label='Filter' clickable />
+        <Chip
+          sx={MENU_STYLES}
+          icon={<DashboardIcon />}
+          label={board?.title}
+          clickable
+        />
+        <Chip
+          sx={MENU_STYLES}
+          icon={<VpnLockIcon />}
+          label={capitalize(board?.type)}
+          clickable
+        />
+        <Chip
+          sx={MENU_STYLES}
+          icon={<AddToDriveIcon />}
+          label='Add To Google Drive'
+          clickable
+        />
+        <Chip
+          sx={MENU_STYLES}
+          icon={<BoltIcon />}
+          label='Automation'
+          clickable
+        />
+        <Chip
+          sx={MENU_STYLES}
+          icon={<FilterListIcon />}
+          label='Filter'
+          clickable
+        />
       </Box>
 
       <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
@@ -67,7 +92,10 @@ const BoardBar = () => {
           }}
         >
           <Tooltip title='Avatar'>
-            <Avatar alt='Avatar' src='https://mui.com/static/images/avatar/1.jpg' />
+            <Avatar
+              alt='Avatar'
+              src='https://mui.com/static/images/avatar/1.jpg'
+            />
           </Tooltip>
           <Tooltip title='Avatar'>
             <Avatar
@@ -77,7 +105,10 @@ const BoardBar = () => {
             />
           </Tooltip>
           <Tooltip title='Avatar'>
-            <Avatar alt='Avatar' src='https://mui.com/static/images/avatar/3.jpg' />
+            <Avatar
+              alt='Avatar'
+              src='https://mui.com/static/images/avatar/3.jpg'
+            />
           </Tooltip>
           <Tooltip title='Avatar'>
             <Avatar
