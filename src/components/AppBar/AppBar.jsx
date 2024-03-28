@@ -8,7 +8,14 @@ import Box from '@mui/material/Box'
 import AppsIcon from '@mui/icons-material/Apps'
 import TrelloIcon from '~/assets/trello.svg?react'
 import SvgIcon from '@mui/material/SvgIcon'
-import { Badge, Button, InputAdornment, TextField, Tooltip, Typography } from '@mui/material'
+import {
+  Badge,
+  Button,
+  InputAdornment,
+  TextField,
+  Tooltip,
+  Typography
+} from '@mui/material'
 import Workspaces from './Menus/Workspaces'
 import Recent from './Menus/Recent'
 import Starred from './Menus/Starred'
@@ -30,7 +37,8 @@ const AppBar = () => {
         justifyContent: 'space-between',
         overflowX: 'auto',
         gap: 2,
-        bgcolor: (theme) => (theme.palette.mode === 'dark' ? '#2c3e50' : '#1565c0')
+        bgcolor: (theme) =>
+          theme.palette.mode === 'dark' ? '#2c3e50' : '#1565c0'
       }}
     >
       <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
@@ -45,7 +53,7 @@ const AppBar = () => {
           />
           <Typography
             variant='span'
-            sx={{ fontSize: '1.2rem', fontWeight: 'bold', color: 'white ' }}
+            sx={{ fontSize: '1.2rem', fontWeight: 'bold', color: 'white' }}
           >
             Trello
           </Typography>
@@ -95,7 +103,10 @@ const AppBar = () => {
                 <CloseIcon
                   onClick={() => setSearchValue('')}
                   fontSize='small'
-                  sx={{ color: searchValue ? 'white' : 'transparent', cursor: 'pointer' }}
+                  sx={{
+                    color: searchValue ? 'white' : 'transparent',
+                    cursor: 'pointer'
+                  }}
                 />
               </InputAdornment>
             )
@@ -104,11 +115,7 @@ const AppBar = () => {
         <ModeSelect />
 
         <Tooltip title='Notifications'>
-          <Badge
-            color='warning'
-            variant='dot'
-            sx={{ cursor: 'pointer' }}
-          >
+          <Badge color='warning' variant='dot' sx={{ cursor: 'pointer' }}>
             <NotificationsNoneIcon sx={{ color: 'white ' }} />
           </Badge>
         </Tooltip>
